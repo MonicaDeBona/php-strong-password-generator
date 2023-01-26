@@ -44,7 +44,7 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
             <?php
             function randomPswGenerator($length)
             {
-                $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}";
+                $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{},;.:";
                 $randomPsw = '';
                 for ($i = 0; $i < $length; $i++) {
                     $randomIndex = random_int(0, strlen($characters) - 1);
@@ -55,7 +55,7 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
             if (isset($_GET['userPswLn'])) {
                 $pswLn = $_GET['userPswLn'];
                 $randomPsw = randomPswGenerator($pswLn);
-                echo "<p> La tua password:  . {$randomPsw} </p>";
+                echo "<p> La tua password: {$randomPsw} </p>";
             }
             ?>
         </div>
